@@ -1,11 +1,17 @@
 package com.company;
 
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Set;
 
 public class Equipe {
 
     private  String nomE;
-    private  ArrayList<Joueur> joueurs;
+    private ArrayList<Joueur> joueurs;
     private Set<Titre> titres;
 
     public Equipe(String nomE){

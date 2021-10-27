@@ -22,6 +22,10 @@ public class Test {
 
         e1.afficherTitres();
 
+        System.out.println(j1.compareTo(j2));
+
+
+
 
 
 
