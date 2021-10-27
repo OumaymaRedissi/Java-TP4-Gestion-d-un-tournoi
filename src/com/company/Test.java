@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.Collection;
+import java.util.Collections;
+
 public class Test {
 
     public static void main(String[] args) throws EqException {
@@ -23,6 +26,22 @@ public class Test {
         e1.afficherTitres();
 
         System.out.println(j1.compareTo(j2));
+
+// Le tri par ordre croissant des matchs joués avec affichage.
+        e1.getJoueurs().sort(new MatComparator());
+        System.out.println("Joueurs par nombre de match croissant");
+        for (Joueur j: e1.getJoueurs())
+            System.out.println("Nom: "+j.getNom_Prenom()+" Nbr Match :"+j.getNbr_match());
+// Le tri par taille croissante des joueurs. Utiliser un stream pour l’affichage.
+        e1.getJoueurs().sort(Joueur.TComparator);
+        System.out.println("Joueurs par Taille croissante");
+        e1.getJoueurs().stream().forEach(j -> {
+            System.out.println("Nom : "+j.getNom_Prenom()+"Taille :"+j.getTaille());
+        });
+
+// Le tri par poids croissant. Utiliser la méthode sort() pour les listes et une expression Lambda
+        e1.getJoueurs().sort(Joueur.PComparator);
+
 
 
 
