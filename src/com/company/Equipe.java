@@ -11,23 +11,21 @@ public class Equipe {
     public Equipe(String nomE){
         this.nomE = nomE;
         this.joueurs = new ArrayList<Joueur>();
-        this.titres = new TreeSet<Titre>() {
-        };
+        this.titres = new HashSet<Titre>() ;
     }
 
     public String getNomE(){ return nomE; }
     public void setNomE(String nomE){ this.nomE = nomE; }
 
-//	ajouterJoueur(Joueur)*
+//	ajouterJoueur(Joueur)
     public void ajouterJoueur(Joueur joueur) throws EqException{
         if(!this.joueurs.add(joueur))
             throw new EqException("Joueur existant");
     }
 //	ajouterTitre(Titre)
-    public void ajouterTitre(Titre titre) throws EqException{
-        if(!this.titres.add(titre))
-            throw new EqException("Titre déjà existant")
-        ;
+    public void ajouterTitre(Titre ti) throws EqException{
+        if(!this.titres.add(ti))
+            throw new EqException("Titre existant");
     }
 //	getJoueur(int)
     public Joueur getJoueur(int i){

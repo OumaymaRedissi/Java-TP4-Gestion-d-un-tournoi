@@ -20,6 +20,14 @@ public class Joueur {
         this.role = role;
     }
 
+    @Override
+    public String toString(){
+        return "Nom et Prenom:"+ nom_Prenom +" Age:"+age +"  Taille:"+
+                taille +"cm   Poids: "+poids +"kg   Nombre de match:" +nbr_match+
+                "  Role:"+role;
+
+    }
+
 
     public String getNom_Prenom() {
         return nom_Prenom;
