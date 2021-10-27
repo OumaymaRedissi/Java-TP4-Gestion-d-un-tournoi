@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class Test {
 
@@ -42,12 +43,14 @@ public class Test {
 // Le tri par poids croissant. Utiliser la méthode sort() pour les listes et une expression Lambda
         e1.getJoueurs().sort(Joueur.PComparator);
 
-
-
-
-
-
-
-
+//Filtrer les joueurs de taille plus de 180 cm, puis les trier par ordre de taille croissante, et finalement afficher une seule ligne du type 180 : Ali, 183 : Fred, 195 : Bob
+       String noms =e1.getJoueurs().stream()
+               .filter(joueur -> joueur.getTaille()>180)
+               .sorted(Joueur.TComparator)
+               .map(j -> j.getTaille()+" : "+j.getNom_Prenom())
+               .collect(Collectors.joining( "," ));
+       System.out.println("here "+noms);
     }
+
 }
+
