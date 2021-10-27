@@ -2,6 +2,7 @@ package com.company;
 
 
 import java.util.Comparator;
+import java.util.stream.Stream;
 
 public class Joueur implements Comparable<Joueur> {
    // Un joueur est caractérisé par son nom-prénom,
@@ -87,6 +88,19 @@ public class Joueur implements Comparable<Joueur> {
         }
     };
 
+
+    //Selon la valeur int entrée la méthode retourne l'aatribut associé
+    public Object valeur(int i) {
+        switch (i) {
+            case 0: return this.getNom_Prenom();
+            case 1: return this.getTaille();
+            case 2: return this.getPoids();
+            case 3: return this.getNbr_match();
+            case 4: return this.getRole();
+            default: throw new RuntimeException("pas de champ pour cet indice");}}
+
+    public Stream<Object> valeurs(){
+        return  Stream.iterate(0,n ->n+1).limit(5).map(n->this.valeur(n ));}
 
 
 }

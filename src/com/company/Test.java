@@ -50,7 +50,13 @@ public class Test {
                .map(j -> j.getTaille()+" : "+j.getNom_Prenom())
                .collect(Collectors.joining( "," ));
        System.out.println("here "+noms);
-    }
+        e1.getJoueur(0).valeurs().forEach(System.out::println);
+        e1.getJoueur(1).valeurs().forEach(System.out::println);
+        e1.getJoueur(2).valeurs().forEach(System.out::println);
 
+
+
+
+    }
 }
 
